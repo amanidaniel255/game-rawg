@@ -19,7 +19,7 @@ const GameGrid = () => {
         })
     }, [])
     return (
-        <div>
+        <div className="bg-black text-white grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 mx-auto gap-4 p-8">
            
            {games.map(game => (<GameCard key={game.id} game={game} />))}
         </div>

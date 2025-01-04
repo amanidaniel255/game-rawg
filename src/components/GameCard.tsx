@@ -5,22 +5,22 @@ interface GameCardProps {
 }
 const GameCard = ({ game }: GameCardProps) => {
   return (
-    <div className="bg-black text-white flex flex-col items-center md:flex-row  md:items-end p-8 w-[100%]">
-      {/* card  */}
-      <div className="border-2 border-gray-500 rounded-lg  w-fit">
+    
+    
+      <div className="border-2 border-gray-500 rounded-lg">
         {/* image */}
         <div >
           <img
             src={game.background_image}
             alt={game.name}
-            className="h-52 w-52 overflow-hidden object-cover rounded-t-lg"
+            className="h-48 w-full  object-cover rounded-t-lg"
           />
         </div>
-        {/* platform */}
         {/* title */}
-        <h1>{game.name}</h1>
+        <h1 className="p-2 text-2xl font-bold">{game.name}</h1>
+        {/* platform */}
       </div>
-    </div>
+    
   );
 };
 
