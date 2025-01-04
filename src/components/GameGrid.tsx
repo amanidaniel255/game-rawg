@@ -1,26 +1,10 @@
-import { useEffect, useState } from "react";
-import apiClient from "../services/api-client";
-import GameCard from "./GameCard";
- export interface Game{
-    id: number;
-    name: string;
-    background_image: string;
-}
-interface FetchGamesResponse{
-    count: number;
-    results: Game[];
-}
+import useGames from "../hooks/useGames"
+import GameCard from "./GameCard"
 const GameGrid = () => {
-    const [games, setGames] = useState<Game[]>([]);
-    useEffect(() => {
-        apiClient.get<FetchGamesResponse>("/games")
-        .then(response => {
-            setGames(response.data.results);
-        })
-    }, [])
+    const {games,error} = useGames()
     return (
         <div className="bg-black text-white grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 mx-auto gap-4 p-8">
-           
+           {error && <p className="text-red-500 text-2xl">{error}</p>}
            {games.map(game => (<GameCard key={game.id} game={game} />))}
         </div>
     )

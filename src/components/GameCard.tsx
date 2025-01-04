@@ -1,4 +1,4 @@
-import { Game } from "./GameGrid";
+import { Game } from "../hooks/useGames";
 
 interface GameCardProps {
   game: Game;
