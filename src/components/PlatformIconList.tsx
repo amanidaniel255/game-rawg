@@ -1,12 +1,14 @@
-import { Platform } from "../hooks/useGames"
+import { Game, Platform } from "../hooks/useGames"
 import { FaWindows, FaXbox, FaPlaystation, FaApple, FaLinux, FaAndroid } from "react-icons/fa"
 import { MdPhoneIphone } from "react-icons/md"
 import { BsGlobe } from "react-icons/bs"
 import { SiNintendo } from "react-icons/si"
 import { IconType } from "react-icons"
+import CriticScore from "./CriticScore"
 
 interface Props{
     platforms: Platform[]
+   
 }
 
 const icons: {[key: string]: IconType} = {
@@ -24,13 +26,14 @@ const icons: {[key: string]: IconType} = {
 const PlatformIconList = ({platforms}: Props) => {
   return (
     <div className="flex gap-1 items-center ">
-      <h2 className="font-bold text-2xl pl-2 opacity-50">Platforms:</h2>
-      <div className="flex gap-1 items-center pt-2 opacity-50">
+      <div className="flex gap-2 items-center pt-2 opacity-50 justify-between">
+      
 
     {platforms.map(platform => {
       const IconComponent = icons[platform.slug];
       return <IconComponent key={platform.id} />;
     })}
+      
 
       </div>
 
