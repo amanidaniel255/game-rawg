@@ -13,7 +13,7 @@ const NavBar = () => {
       <input
         type="text"
         placeholder="search for games here"
-        className="rounded-full px-8 py-2 bg-black placeholder:bg-black/50 placeholder:text-white/50   outline outline-1 outline-gray-400"
+        className="rounded-full px-8 py-2 bg-black placeholder:bg-black/50 hover:placeholder:opacity-80 placeholder:text-white/50   outline outline-1 outline-gray-400"
       />
     </div>
       {/* menu */}

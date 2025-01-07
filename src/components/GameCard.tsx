@@ -4,6 +4,7 @@ import PlatformIconList from "./PlatformIconList";
 
 interface GameCardProps {
   game: Game;
+  
 }
 const GameCard = ({ game }: GameCardProps) => {
  
@@ -12,7 +13,7 @@ const GameCard = ({ game }: GameCardProps) => {
     
       <div className="border-2 border-gray-500 rounded-lg">
         {/* image */}
-        <div >
+        <div>
           <img
             src={game.background_image}
             alt={game.name}
