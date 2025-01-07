@@ -9,7 +9,7 @@ const GameGrid = () => {
            {error && <p className="text-red-500 text-2xl">{error}</p>}
            
           
-           {isloading ?  (skeletons.map(() => <CardSkeleton/>)) : games.map(game => (<GameCard key={game.id} game={game}/>))}
+           {isloading ?  (skeletons.map(() => <CardSkeleton />)) : games.map(game => (<GameCard key={game.id} game={game}/>))}
         </div>
     )
 }

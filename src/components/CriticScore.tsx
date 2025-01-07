@@ -6,7 +6,7 @@ interface Props{
 
 const CriticScore = ({game}: Props) => {
     // const criticScore = game.metacritic
-    console.log(game);
+ 
     
   return (
     <div className="w-fit bg-green-400/20 px-2 rounded-md text-xl font-bold ">
