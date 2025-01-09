@@ -1,7 +1,8 @@
-import useGenres from "../hooks/useGenres";
+import useData from "../hooks/useData";
+import useGenres, { Genre } from "../hooks/useGenres";
 
 const Genres = () => {
-  const { genres, error } = useGenres();
+  const {data: genres, error, isloading} = useGenres();
   return (
     <div className="bg-black text-white/50 w-[30%]">
       {error && <p className="text-red-500 text-2xl">{error}</p>}
