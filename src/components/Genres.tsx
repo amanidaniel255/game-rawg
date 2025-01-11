@@ -1,10 +1,11 @@
-import useData from "../hooks/useData";
 import useGenres, { Genre } from "../hooks/useGenres";
+import { BounceLoader } from "react-spinners";
 
 const Genres = () => {
   const {data: genres, error, isloading} = useGenres();
+  if (isloading) return <BounceLoader color="gray"/>;
   return (
-    <div className="bg-black text-white/50 w-[30%]">
+    <div className="bg-black text-white/50">
       {error && <p className="text-red-500 text-2xl">{error}</p>}
       {genres.map((genre) => (
         <div
