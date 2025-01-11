@@ -9,7 +9,7 @@ const App = () => {
       <div className="w-full">
 
       <div className="flex">
-        <div className="flex-none w-1/8">
+        <div className="flex-none w-1/6">
       <Genres />
 
         </div>

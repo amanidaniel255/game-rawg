@@ -8,13 +8,19 @@ const Genres = () => {
     <div className="bg-black text-white/50">
       {error && <p className="text-red-500 text-2xl">{error}</p>}
       {genres.map((genre) => (
-        <div
-          className="flex items-center justify-start text-nowrap gap-3 pb-4"
+        <button
           key={genre.id}
+          className="flex items-center justify-center pt-2"
         >
-          <img src={genre.image_background} className="w-fit h-6 object-cover rounded-sm" />
+          <a href="#" className="flex items-center gap-1 justify-center hover:text-white">
+
+          <img src={genre.image_background} className=" h-8 w-8 object-cover rounded-sm" />
+          <span className="text-sm">
+
           {genre.name}
-        </div>
+          </span>
+          </a>
+        </button>
       ))}
     </div>
   );
