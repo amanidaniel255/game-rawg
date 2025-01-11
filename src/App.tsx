@@ -1,8 +1,11 @@
+import { useState } from "react";
 import GameGrid from "./components/GameGrid"
 import Genres from "./components/Genres"
 import NavBar from "./components/NavBar"
-
+import { Genre } from "./hooks/useGenres";
 const App = () => {
+  const [genre, setGenre] = useState<Genre | null>(null);
+
   return (
     <div>
       <NavBar />
@@ -10,12 +13,12 @@ const App = () => {
 
       <div className="flex">
         <div className="flex-none w-1/6">
-      <Genres />
+      <Genres onSelectGenre={(genre)=>setGenre(genre)}/>
 
         </div>
         <div className="flex-grow w-full">
 
-      <GameGrid />
+      <GameGrid selectedGenre={genre}/>
         </div>
 
       </div>
