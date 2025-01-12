@@ -2,8 +2,9 @@ import useGenres, { Genre } from "../hooks/useGenres";
 import { BounceLoader } from "react-spinners";
 interface Props{
 onSelectGenre:(genre: Genre)=>void;
+selectedGenre: Genre | null
 }
-const Genres = ({onSelectGenre}: Props) => {
+const Genres = ({onSelectGenre, selectedGenre}: Props) => {
   const {data: genres, error, isloading} = useGenres();
   if (isloading) return <BounceLoader color="gray"/>;
   return (
@@ -12,7 +13,7 @@ const Genres = ({onSelectGenre}: Props) => {
       {genres.map((genre) => (
         <button
           key={genre.id}
-          className="flex items-center justify-center gap-1 pb-2 hover:text-white"
+          className={`flex items-center justify-center  gap-1 pb-2 hover:text-white ${selectedGenre?.id === genre.id ? "font-bold" : "font-normal"}`}
           onClick={() => onSelectGenre(genre)
           }
 

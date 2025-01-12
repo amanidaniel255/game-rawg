@@ -13,7 +13,7 @@ const App = () => {
 
       <div className="flex">
         <div className="flex-none w-1/6">
-      <Genres onSelectGenre={(genre)=>setGenre(genre)}/>
+      <Genres onSelectGenre={(genre)=>setGenre(genre)} selectedGenre={genre}/>
 
         </div>
         <div className="flex-grow w-full">
